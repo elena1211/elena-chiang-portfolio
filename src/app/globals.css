@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --ground: #fafaf8;
+  --edge: #e3e2dd;
+  --ink: #1b1c20;
+  --soft: #5a5d66;
+  --accent: #2f4b7c;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --ground: #111214;
+  --edge: #2a2c31;
+  --ink: #ececee;
+  --soft: #a0a3ab;
+  --accent: #a9bbe6;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-edge: var(--edge);
+  --color-ink: var(--ink);
+  --color-soft: var(--soft);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-hanken-grotesk), system-ui, sans-serif;
+}
+
+@theme {
+  --animate-fade-in: fade-in 500ms ease-out both;
+
+  /* Starts faint rather than invisible, so the intro is readable before the animation runs. */
+  @keyframes fade-in {
+    from {
+      opacity: 0.2;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition:
+    background-color 300ms,
+    color 300ms;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
