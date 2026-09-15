@@ -8,9 +8,9 @@ export function IntroSection() {
   return (
     <section
       aria-labelledby="intro-heading"
-      className="grid animate-fade-in items-center gap-10 pb-16 pt-8 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] md:gap-16 md:pb-24 md:pt-14"
+      className="grid items-center gap-10 pb-16 pt-8 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] md:gap-16 md:pb-24 md:pt-14"
     >
-      <div className="grid gap-6">
+      <div className="grid animate-fade-in gap-6">
         <p className="text-soft">{intro.eyebrow}</p>
         <h1
           id="intro-heading"
@@ -57,7 +57,7 @@ export function IntroSection() {
         alt={`Portrait of ${profile.name}`}
         priority
         placeholder="blur"
-        sizes="(min-width: 1080px) 410px, (min-width: 768px) 40vw, 100vw"
+        sizes="(min-width: 1080px) 410px, (min-width: 768px) 40vw, (min-width: 480px) 384px, calc(100vw - 32px)"
         className="aspect-[4/5] w-full rounded-2xl object-cover object-top max-md:max-w-sm"
       />
     </section>

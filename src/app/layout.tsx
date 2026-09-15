@@ -10,9 +10,11 @@ const hankenGrotesk = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(profile.siteUrl),
   title: `${profile.name}, Computer Science graduate`,
   description:
     "Elena Chiang is a Computer Science MSc graduate (Distinction) in London looking for an entry-level role in implementation, technical solutions, QA or technical business analysis. See LevelUp, her full-stack MSc project.",
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

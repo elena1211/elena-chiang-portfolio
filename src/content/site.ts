@@ -2,6 +2,7 @@ export const profile = {
   name: "Elena Chiang",
   location: "London",
   email: "elena.yychiang@gmail.com",
+  siteUrl: "https://elena-chiang-portfolio.vercel.app",
 };
 
 export const links = {

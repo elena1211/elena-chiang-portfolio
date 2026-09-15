@@ -3,34 +3,43 @@
 import { useEffect, useState } from "react";
 import { pillClassName } from "@/lib/styles";
 
-const FEEDBACK_DURATION_MS = 3000;
+const COPIED_MESSAGE = "Email copied";
+const FAILED_MESSAGE = "Couldn't copy. The address is shown above.";
+const COPIED_DURATION_MS = 3000;
+
+type CopyFeedback = {
+  message: string;
+  shownAt: number;
+};
 
 export function CopyEmailButton({ email }: { email: string }) {
-  // A new value on every successful copy restarts the feedback timer,
-  // even when "Email copied" is already showing.
-  const [copiedAt, setCopiedAt] = useState<number | null>(null);
+  // A new value on every attempt restarts the timer and re-announces the message,
+  // even when the same message is already showing.
+  const [feedback, setFeedback] = useState<CopyFeedback | null>(null);
 
   useEffect(() => {
-    if (copiedAt === null) {
+    // The failure message stays until the next attempt, so there is time to read it.
+    if (feedback?.message !== COPIED_MESSAGE) {
       return;
     }
 
-    const timer = setTimeout(() => setCopiedAt(null), FEEDBACK_DURATION_MS);
+    const timer = setTimeout(() => setFeedback(null), COPIED_DURATION_MS);
     return () => clearTimeout(timer);
-  }, [copiedAt]);
+  }, [feedback]);
 
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText(email);
-      setCopiedAt(Date.now());
+      setFeedback({ message: COPIED_MESSAGE, shownAt: Date.now() });
     } catch {
-      // Clipboard access can be denied; opening the mail app still gets the visitor there.
-      window.location.href = `mailto:${email}`;
+      // Clipboard access can be denied. The address is already visible above the
+      // button, so point there instead of leaving the page for a mail app.
+      setFeedback({ message: FAILED_MESSAGE, shownAt: Date.now() });
     }
   }
 
-  // The button keeps its name and a separate status message reports the result,
-  // so screen readers announce the copy once.
+  // The button keeps its name and a separate status message reports the result.
+  // Keying the message replaces its node, so screen readers announce a repeat too.
   return (
     <span className="inline-flex items-center gap-3">
       <button
@@ -41,7 +50,7 @@ export function CopyEmailButton({ email }: { email: string }) {
         Copy email
       </button>
       <span role="status" className="text-sm text-soft">
-        {copiedAt === null ? "" : "Email copied"}
+        {feedback && <span key={feedback.shownAt}>{feedback.message}</span>}
       </span>
     </span>
   );
