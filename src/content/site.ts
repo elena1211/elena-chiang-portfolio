@@ -18,12 +18,16 @@ export const navigation = [
   { href: "#contact", label: "Contact" },
 ];
 
+const targetRoles =
+  "implementation, technical solutions, QA or technical business analysis";
+
 export const intro = {
-  eyebrow: "Junior software engineer in London",
-  headline: "Hi, I'm Elena. I'm looking for my first software engineering role.",
+  eyebrow: "Computer Science graduate in London",
+  headline: "Hi, I'm Elena. I'm looking for my first role in technology.",
   paragraphs: [
-    "I finished an MSc in Computer Science (conversion) at Queen Mary University of London in 2025 with a Distinction. My main project is LevelUp, a full-stack web app built with React, Django REST Framework and PostgreSQL.",
-    "Before tech I worked in events and retail, where I coordinated teams, led shifts and kept things running when plans changed.",
+    `I finished an MSc in Computer Science (conversion) at Queen Mary University of London in 2025 with a Distinction, and I'm looking for an entry-level role in ${targetRoles}.`,
+    "My main project is LevelUp, a full-stack web app built with React, Django REST Framework and PostgreSQL. Before tech I worked in events and retail, where I coordinated teams, led shifts and kept things running when plans changed.",
+    "I'm on a UK Graduate visa valid until January 2028, so I can work now without sponsorship.",
   ],
   primaryCta: "See LevelUp",
 };
@@ -39,7 +43,7 @@ export const levelUp = {
   name: "LevelUp",
   tagline: "A gamified productivity web app, completed as my MSc project.",
   description:
-    "LevelUp combines task management with XP, levels and attributes that update when a task is completed, and a hand-drawn character that grows from Lost Novice to Queen. I completed it with substantial AI assistance, and tested it with 8 participants, whose feedback changed the quest timing and the interface layout.",
+    "LevelUp combines task management with XP, levels and attributes that update when a task is completed, and a hand-drawn character that grows from Lost Novice to Queen. I developed it with substantial AI assistance and recruited 8 participants for a questionnaire-based evaluation of registration, task flows, quest timing and onboarding, which identified priorities for refinement.",
   screenshots: {
     welcome: {
       alt: "LevelUp welcome screen showing five character stages from Lost Novice to Queen next to the sign-up options",
@@ -65,7 +69,7 @@ export const levelUp = {
     },
     {
       title: "Rewards are saved safely",
-      body: "Each reward is written inside a database transaction that locks the user's row, so two quick taps on the same task can't overwrite each other's EXP.",
+      body: "Each reward is written inside a database transaction that locks the user's row, so two requests arriving at the same moment can't overwrite each other's XP.",
     },
     {
       title: "Every change is checked before it merges",
@@ -73,7 +77,7 @@ export const levelUp = {
     },
     {
       title: "The AI companion has limits",
-      body: "The in-app System writes daily briefs and missions. User text is length-capped and kept out of the system prompt, the model's reply is validated before anything is saved, and the AI endpoints are rate-limited.",
+      body: "The in-app System writes daily briefs and missions. User text is length-capped and kept out of the system prompt, values in the model's reply are checked and kept within limits before anything is saved, and the AI endpoints are rate-limited.",
     },
   ],
   stack: [
@@ -92,8 +96,8 @@ export const levelUp = {
 
 export const about = {
   story: [
-    "I studied literature and mass communication in Taiwan, then worked in events in Taipei and later coordinated livestreams for Tomsu across teams in Taiwan and South Korea. Most of that work was coordination: agreeing plans with clients, venues and vendors, briefing on-site teams, and keeping everyone updated when something changed.",
-    "In London I work in retail, where I now lead shifts as a key holder: coordinating team coverage, setting priorities and resolving operational and customer issues. I want to bring that same reliability and communication to a software team.",
+    "I studied literature and mass communication in Taiwan, then worked in events and education programmes in Taipei, and later coordinated remotely with livestream presenters for Tomsu. Most of that work was coordination: agreeing plans with clients, venues and vendors, briefing on-site teams, and keeping everyone updated when something changed.",
+    "In London I work in retail. As a key holder I lead opening and closing shifts, set floor priorities and share handover updates with colleagues. I want to bring that same reliability and clear communication to a technology team.",
   ],
   timeline: [
     {
@@ -103,28 +107,38 @@ export const about = {
     },
     {
       years: "2024–2025",
-      title: "MSc Computer Science (conversion), Distinction",
+      title: "MSc Computer Science (Conversion), Distinction",
       place: "Queen Mary University of London",
     },
     {
       years: "2021, 2024",
-      title: "Livestream and social media coordinator",
+      title: "Livestream and Social Media Coordinator",
       place: "Tomsu, Taiwan",
     },
     {
       years: "2022–2023",
-      title: "Sales Associate, London District MVP",
+      title: "Sales Associate",
       place: "Skechers, London",
     },
     {
       years: "2019–2021",
-      title: "MSc Events Management (Merit)",
+      title: "MSc Events Management, Merit",
       place: "Bournemouth University",
     },
     {
-      years: "2013–2017",
-      title: "Events and programme coordination",
-      place: "Elite International Group, Taipei",
+      years: "2020",
+      title: "International Liaison Office Intern",
+      place: "China UK Gateway, London",
+    },
+    {
+      years: "2015–2017",
+      title: "Vice Camp Director",
+      place: "Elite International Education Group, Taipei",
+    },
+    {
+      years: "2014–2015",
+      title: "PR and Event Coordinator",
+      place: "RS Multi-communication Consultancy, Taipei",
     },
   ],
 };
@@ -132,7 +146,7 @@ export const about = {
 export const contact = {
   heading: "Get in touch",
   paragraphs: [
-    "Email is the quickest way to reach me. I'm open to roles in London or remote within the UK.",
+    `Email is the quickest way to reach me. I'm open to entry-level roles in ${targetRoles}, in London or remote within the UK.`,
     "I'm on a UK Graduate visa valid until January 2028, so I can work now without sponsorship. My notice period is one month.",
   ],
 };

@@ -1,6 +1,6 @@
 # Elena Chiang: portfolio
 
-Personal portfolio site for Elena Chiang, a junior software engineer in London with an MSc in Computer Science (conversion) from Queen Mary University of London. It presents LevelUp, a gamified productivity web app, alongside Elena's background and contact details.
+Personal portfolio site for Elena Chiang, a Computer Science MSc graduate in London looking for an entry-level role in implementation, technical solutions, QA or technical business analysis. It presents LevelUp, a gamified productivity web app, alongside Elena's background and contact details.
 
 ## Stack
 

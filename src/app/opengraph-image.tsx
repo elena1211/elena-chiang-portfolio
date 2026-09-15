@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { intro, profile } from "@/content/site";
 
-export const alt = `${profile.name}, junior software engineer in London`;
+export const alt = `${profile.name}, ${intro.eyebrow}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

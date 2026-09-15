@@ -10,9 +10,9 @@ const hankenGrotesk = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name}, junior software engineer`,
+  title: `${profile.name}, Computer Science graduate`,
   description:
-    "Elena Chiang is a junior software engineer in London with an MSc in Computer Science (Distinction) from Queen Mary University of London. See LevelUp, her full-stack MSc project.",
+    "Elena Chiang is a Computer Science MSc graduate (Distinction) in London looking for an entry-level role in implementation, technical solutions, QA or technical business analysis. See LevelUp, her full-stack MSc project.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
