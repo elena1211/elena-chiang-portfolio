@@ -63,6 +63,8 @@ export const levelUp = {
       caption: "The System checks in each morning and evening.",
     },
   } satisfies Record<LevelUpScreenshotName, Screenshot>,
+  enlargeLabel: "Enlarge screenshot",
+  closeLabel: "Close",
   highlights: [
     {
       title: "Each account's data stays private",

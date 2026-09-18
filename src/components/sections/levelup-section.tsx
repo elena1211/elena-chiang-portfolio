@@ -1,9 +1,10 @@
-import Image, { type StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 import homeImage from "@/assets/levelup/home.png";
 import systemImage from "@/assets/levelup/system.png";
 import tasksImage from "@/assets/levelup/tasks.png";
 import welcomeImage from "@/assets/levelup/welcome.png";
 import { ExternalLink } from "@/components/external-link";
+import { ZoomableScreenshot } from "@/components/zoomable-screenshot";
 import { levelUp, type LevelUpScreenshotName } from "@/content/site";
 import {
   pillClassName,
@@ -33,12 +34,10 @@ function Screenshot({ name, sizes }: ScreenshotProps) {
 
   return (
     <figure className="grid gap-3">
-      <Image
-        src={screenshotImages[name]}
+      <ZoomableScreenshot
+        image={screenshotImages[name]}
         alt={alt}
         sizes={sizes}
-        placeholder="blur"
-        className="w-full rounded-xl border border-edge"
       />
       <figcaption className="text-sm text-soft">{caption}</figcaption>
     </figure>
