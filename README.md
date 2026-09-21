@@ -9,7 +9,7 @@ Personal portfolio site for Elena Chiang, a Computer Science MSc graduate in Lon
 - Tailwind CSS 4
 - Deployed on Vercel
 
-The page is statically prerendered. Two small client components handle the dark mode toggle and copying the email address; everything else renders on the server.
+The page is statically prerendered. Three small client components handle the dark mode toggle, copying the email address and opening a screenshot at full size; everything else renders on the server.
 
 ## Running locally
 
@@ -31,8 +31,8 @@ Other scripts:
 
 ```
 src/
-  app/            Root layout, home page, global styles, icon and Open Graph image
-  components/     Header, footer, theme toggle and shared links
+  app/            Root layout, home page, global styles, icon, Open Graph image, robots.txt and sitemap.xml
+  components/     Header, footer, theme toggle, shared links and the screenshot zoom
     sections/     Intro, LevelUp, About and Contact sections
   content/site.ts All copy and links shown on the site
   lib/            Shared class names and theme helpers
