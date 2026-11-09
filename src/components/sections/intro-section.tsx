@@ -4,7 +4,11 @@ import { ExternalLink } from "@/components/external-link";
 import { intro, links, profile } from "@/content/site";
 import { pillClassName } from "@/lib/styles";
 
+// The first paragraph and the buttons sit together so the main actions stay
+// above the fold on a laptop screen; the remaining paragraphs are supporting detail.
 export function IntroSection() {
+  const [lead, ...details] = intro.paragraphs;
+
   return (
     <section
       aria-labelledby="intro-heading"
@@ -18,11 +22,7 @@ export function IntroSection() {
         >
           {intro.headline}
         </h1>
-        <div className="grid max-w-[58ch] gap-4 text-lg leading-relaxed text-soft">
-          {intro.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <p className="max-w-[58ch] text-lg leading-relaxed text-soft">{lead}</p>
         <div className="flex flex-wrap gap-3">
           <a href="#work" className={pillClassName("primary")}>
             {intro.primaryCta}
@@ -50,6 +50,11 @@ export function IntroSection() {
               LinkedIn
             </ExternalLink>
           </div>
+        </div>
+        <div className="grid max-w-[58ch] gap-4 text-lg leading-relaxed text-soft">
+          {details.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </div>
       <Image
