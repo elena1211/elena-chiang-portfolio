@@ -44,7 +44,7 @@ export const levelUp = {
   name: "LevelUp",
   tagline: "A gamified productivity web app, completed as my MSc project.",
   description:
-    "LevelUp combines task management with XP, levels and attributes that update when a task is completed, and a hand-drawn character that grows from Lost Novice to Queen. I developed it with substantial AI assistance and recruited 8 participants for a questionnaire-based evaluation of registration, task flows, quest timing and onboarding, which identified priorities for refinement.",
+    "LevelUp combines task management with EXP, levels and attributes that update when a task is completed, and a hand-drawn character that grows from Lost Novice to Queen. I developed it with substantial AI assistance and recruited 8 participants for a questionnaire-based evaluation of registration, task flows, quest timing and onboarding, which identified priorities for refinement.",
   screenshots: {
     welcome: {
       alt: "LevelUp welcome screen showing five character stages from Lost Novice to Queen next to the sign-up options",
@@ -72,7 +72,7 @@ export const levelUp = {
     },
     {
       title: "Rewards are saved safely",
-      body: "Each reward is written inside a database transaction that locks the user's row, so two requests arriving at the same moment can't overwrite each other's XP.",
+      body: "Each reward is written inside a database transaction that locks the user's row, so two requests arriving at the same moment can't overwrite each other's EXP.",
     },
     {
       title: "Every change is checked before it merges",
