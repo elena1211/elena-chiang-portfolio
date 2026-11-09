@@ -113,6 +113,31 @@ export function LevelUpSection() {
           </div>
         </div>
       </div>
+
+      <div className="mt-14 grid gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-16">
+        <div>
+          <h3 className="text-lg font-semibold">{levelUp.testing.heading}</h3>
+          <p className="mt-4 leading-relaxed text-soft">
+            {levelUp.testing.intro}
+          </p>
+          <div className="mt-6 grid gap-6">
+            {levelUp.testing.groups.map((group) => (
+              <div key={group.title}>
+                <h4 className="font-medium">{group.title}</h4>
+                <ul className="mt-2 grid list-disc gap-1.5 pl-5 leading-relaxed text-soft">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 leading-relaxed text-soft">
+            {levelUp.testing.reflection}
+          </p>
+          <p className="mt-4 text-sm text-soft">{levelUp.testing.limits}</p>
+        </div>
+      </div>
     </section>
   );
 }

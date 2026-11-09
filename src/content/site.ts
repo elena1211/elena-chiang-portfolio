@@ -83,6 +83,41 @@ export const levelUp = {
       body: "The in-app System writes daily briefs and missions. User text is length-capped and kept out of the system prompt, values in the model's reply are checked and kept within limits before anything is saved, and the AI endpoints are rate-limited.",
     },
   ],
+  testing: {
+    heading: "How it was tested",
+    intro:
+      "I designed the test and its questionnaire, with AI assistance. Eight participants from varied professional backgrounds each tried the app, most for 10 to 30 minutes, and then answered 1 to 5 ratings and open questions.",
+    groups: [
+      {
+        title: "What worked",
+        items: [
+          "All eight rated registering and setting a goal 4 or 5 out of 5.",
+          "Seven of eight said the level system motivated them at least somewhat, and seven of eight found the timed quests helpful at least some of the time.",
+          "Seven of eight said they would use the app again or recommend it. On average they gave 7.5 out of 10 when asked how much it helped them feel productive or in control of their time.",
+        ],
+      },
+      {
+        title: "What didn't work",
+        items: [
+          "The lowest ratings went to how clear the daily tasks were and to checking off a task: two participants gave 3 or lower on each.",
+          "One participant found the timed quests too sudden, and another asked for more time options.",
+          "One participant's daily tasks did not match their chosen goal (a Get Fit goal with a coding exercise), and another wanted to pick more than one learning option.",
+          "One participant asked for a short user guide, one wanted to try the app as a guest, and one wanted to interact or compete with friends.",
+        ],
+      },
+      {
+        title: "What changed afterwards",
+        items: [
+          "The app was later updated with a first-run walkthrough, a preview step before a timed quest starts counting down, daily tasks weighted towards attributes that match the chosen goal, and a guest mode.",
+          "Adjustable quest timers, multiple goals and social features have not been built.",
+        ],
+      },
+    ],
+    reflection:
+      "Before testing I assumed randomness alone would give enough variety and that a timer alone would prompt action. A few participants pointed the other way: they wanted some control over which tasks they got and how long a quest lasts.",
+    limits:
+      "This was eight people, one short session each, and self-reported answers, so it shows first impressions rather than whether the app builds lasting habits.",
+  },
   stack: [
     "React, JavaScript, Vite",
     "Tailwind CSS",
