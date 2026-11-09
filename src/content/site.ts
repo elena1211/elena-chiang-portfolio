@@ -120,7 +120,7 @@ export const about = {
     },
     {
       years: "2022–2023",
-      title: "Sales Associate",
+      title: "Sales Associate, named London District MVP",
       place: "Skechers, London",
     },
     {
